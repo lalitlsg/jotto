@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import styles from "./GuessedWords.module.css";
 
 const GuessedWords = (props) => {
   let content =
@@ -10,15 +11,15 @@ const GuessedWords = (props) => {
         <table>
           <thead>
             <tr>
-              <th>Words</th>
-              <th>Matching Letters</th>
+              <th className={styles.thead}>Word</th>
+              <th className={styles.thead}> Matching Letters</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className={styles.tbody}>
             {props.guessedWords.map((w, i) => (
               <tr data-test="guessed-word" key={i}>
-                <td>{w.guessedWord}</td>
-                <td>{w.letterMatchCount}</td>
+                <td className={styles.tr}>{w.guessedWord}</td>
+                <td className={styles.tr}>{w.letterMatchCount}</td>
               </tr>
             ))}
           </tbody>

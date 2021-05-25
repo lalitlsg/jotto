@@ -1,0 +1,11 @@
+.app {
+  margin-left: 1em;
+}
+
+.brandName {
+  color: #0000b3;
+  background-color: #e5e5ff;
+  width: fit-content;
+  padding: 0.5em;
+  border-radius: 0.5em;
+}

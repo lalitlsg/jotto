@@ -1,0 +1,12 @@
+.thead {
+  background-color: #d9d9d9;
+  padding: 10px;
+}
+
+.tbody {
+  text-align: center;
+}
+
+.tr {
+  border-bottom: 1px solid #d9d9d9;
+}
