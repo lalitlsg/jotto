@@ -15,7 +15,7 @@ const setup = (props = {}) => {
 };
 
 test("renders congrats component without error", () => {
-  const wrapper = setup();
+  const wrapper = setup({ success: false });
   const component = findbyAttrTest(wrapper, "component-congrats");
   expect(component.length).toBe(1);
 });

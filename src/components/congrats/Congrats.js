@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 /**
  * Component to show congrats msg.
  * @param {object} props - Component props.
@@ -11,6 +13,10 @@ const Congrats = (props) => {
   ) : (
     <div data-test="component-congrats" />
   );
+};
+
+Congrats.propTypes = {
+  success: PropTypes.bool.isRequired,
 };
 
 export default Congrats;
