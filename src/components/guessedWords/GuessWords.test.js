@@ -36,4 +36,29 @@ describe("if there are no words guessed", () => {
   });
 });
 
-describe("if there are words guessed", () => {});
+describe("if there are words guessed", () => {
+  let wrapper;
+  const guessedWords = [
+    { guessedWord: "bat", letterMatchCount: 2 },
+    { guessedWord: "party", letterMatchCount: 3 },
+    { guessedWord: "camera", letterMatchCount: 4 },
+  ];
+  beforeEach(() => {
+    wrapper = setup({ guessedWords });
+  });
+
+  test("renders without error", () => {
+    const component = findbyAttrTest(wrapper, "component-guessed-words");
+    expect(component.length).toBe(1);
+  });
+
+  test('renders "guessed words" section', () => {
+    const guestWordsNode = findbyAttrTest(wrapper, "guessed-words");
+    expect(guestWordsNode.length).toBe(1);
+  });
+
+  test("correct no of guessed words", () => {
+    const guessedWordNodes = findbyAttrTest(wrapper, "guessed-word");
+    expect(guessedWordNodes.length).toBe(guessedWords.length);
+  });
+});
