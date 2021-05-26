@@ -1,8 +1,9 @@
 import { ShallowWrapper } from "enzyme";
 import checkPropsTypes from "check-prop-types";
 import React from "react";
-import { createStore } from "redux";
+import { applyMiddleware, createStore } from "redux";
 import rootReducer from "../src/store/reducers";
+import { middlewares } from "../src/store";
 
 /**
  * Create a testing store with imported reducers, middlewares and initial state.
@@ -10,7 +11,10 @@ import rootReducer from "../src/store/reducers";
  * @returns {Store} - redux store
  */
 export const storeFactory = (initialState) => {
-  return createStore(rootReducer, initialState);
+  const createStoreWithMiddleware = applyMiddleware(...middlewares)(
+    createStore
+  );
+  return createStoreWithMiddleware(rootReducer, initialState);
 };
 
 /**
