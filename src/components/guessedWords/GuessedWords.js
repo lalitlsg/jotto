@@ -11,6 +11,7 @@ const GuessedWords = (props) => {
         <table>
           <thead>
             <tr>
+              <th className={styles.thead}>#</th>
               <th className={styles.thead}>Word</th>
               <th className={styles.thead}> Matching Letters</th>
             </tr>
@@ -18,6 +19,7 @@ const GuessedWords = (props) => {
           <tbody className={styles.tbody}>
             {props.guessedWords.map((w, i) => (
               <tr data-test="guessed-word" key={i}>
+                <td className={styles.tr}>{i}</td>
                 <td className={styles.tr}>{w.guessedWord}</td>
                 <td className={styles.tr}>{w.letterMatchCount}</td>
               </tr>
@@ -35,7 +37,7 @@ GuessedWords.propTypes = {
       guessedWord: PropTypes.string.isRequired,
       letterMatchCount: PropTypes.number.isRequired,
     })
-  ).isRequired,
+  ),
 };
 
 export default GuessedWords;

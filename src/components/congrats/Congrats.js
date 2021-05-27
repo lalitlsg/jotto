@@ -19,7 +19,7 @@ const Congrats = (props) => {
 };
 
 Congrats.propTypes = {
-  success: PropTypes.bool.isRequired,
+  success: PropTypes.bool,
 };
 
 export default Congrats;
