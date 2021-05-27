@@ -36,11 +36,11 @@ export const guessWord = (guessedWord) => {
 };
 
 export const getSecretWord = () => {
-  return async (dispatch) => {
-    const response = await axios.get("http://localhost:8000");
-    dispatch({
-      type: actionTypes.SET_SECRET_WORD,
-      payload: response.data,
-    });
+  // return async (dispatch) => {
+  // const response = await axios.get("http://localhost:8000");
+  return {
+    type: actionTypes.SET_SECRET_WORD,
+    payload: "party",
   };
+  // };
 };

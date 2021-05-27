@@ -4,6 +4,7 @@ import Congrats from "./components/congrats/Congrats";
 import GuessedWords from "./components/guessedWords/GuessedWords";
 import styles from "./App.module.css";
 import { getSecretWord } from "./store/actions";
+import Input from "./components/input/Input";
 
 export class UnconnectedApp extends Component {
   componentDidMount() {
@@ -13,10 +14,10 @@ export class UnconnectedApp extends Component {
     return (
       <div className={styles.app}>
         <h2 className={styles.brandName}>Jotto</h2>
-        <Congrats success={true} />
-        <GuessedWords
-          guessedWords={[{ guessedWord: "train", letterMatchCount: 3 }]}
-        />
+        <div>The Secret Word: {this.props.secretWord}</div>
+        <Congrats success={this.props.success} />
+        <Input />
+        <GuessedWords guessedWords={this.props.guessedWords} />
       </div>
     );
   }
